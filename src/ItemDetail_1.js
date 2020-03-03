@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
 
 function ItemDetail({ match }) {
   useEffect(() => {
@@ -10,22 +9,6 @@ function ItemDetail({ match }) {
 
   const [item, setItem] = useState([]);
 
-  const fetchItem = () => {
-    axios.post("https://apidev.shushu.co/products/view_by_uuid", {
-      "uuid": match.params.id
-    }, {
-      "headers": {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOjIsImV4cCI6MTU4MzcyNDA5MCwidG9rZW5faWQiOiJDNkdRU1pUMlY0cFdaVDJJMXFkcE1EMDVDOVF4ckRJdE1UNE5COGhlZmVhbExTUENxYiIsInVzZXJfaWQiOjF9.VVslVLvidgGJfh8E89PT6mZ8e3hnH4jjtTGg1CE9rnY"
-      }
-    }).then(function (response) {
-      setItem(response.data.data);
-    }).catch(function (error) {
-      console.log(error);
-    });
-  }
-  
-/*
   const fetchItem = async () => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -46,7 +29,7 @@ function ItemDetail({ match }) {
       })
       .catch(error => console.log('error', error));
   }
-*/
+
 
   return (
     <div>
