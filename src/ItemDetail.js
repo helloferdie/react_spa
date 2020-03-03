@@ -11,7 +11,7 @@ function ItemDetail({ match }) {
   const [item, setItem] = useState([]);
 
   const fetchItem = () => {
-    axios.post("https://apidev.shushu.co/products/view_by_uuid", {
+    axios.post("https://prxdev.shushu.co/products/view_by_uuid", {
       "uuid": match.params.id
     }, {
       "headers": {

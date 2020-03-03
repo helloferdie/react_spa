@@ -21,7 +21,7 @@ function Shop() {
       body: raw
     };
 
-    fetch("https://apidev.shushu.co/products", requestOptions)
+    fetch("https://prxdev.shushu.co/products", requestOptions)
       .then(response => response.json())
       .then(result => setItems(result.data.items))
       .catch(error => console.log('error', error));
